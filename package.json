@@ -4,9 +4,10 @@
   "description": "Implementação do tabnews.com.br",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
-    "compose:down": "docker compose -f infra/compose.yaml down",
-    "compose:up": "docker compose -f infra/compose.yaml up -d",
+    "dev": "npm run services:up && next dev",
+    "services:down": "docker compose -f infra/compose.yaml down",
+    "services:stop": "docker compose -f infra/compose.yaml stop",
+    "services:up": "docker compose -f infra/compose.yaml up -d",
     "lint": "prettier --check .",
     "lint:fix": "prettier --write .",
     "test": "jest",
