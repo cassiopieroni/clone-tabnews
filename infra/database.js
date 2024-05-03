@@ -11,8 +11,6 @@ async function query(queryObject) {
   }
 
   const client = new Client(postmanConfig);
-  console.info('Postman config data', postmanConfig)
- 
   try {
     await client.connect();
     return await client.query(queryObject);
